@@ -1,73 +1,132 @@
-# PaisaPath - Smart Financial Management App
+# Paisa - Smart Financial Tracker
 
-PaisaPath is a Flutter-based financial management application that helps users track their expenses, analyze spending patterns, and make informed investment decisions through AI-powered insights.
+A modern, AI-powered financial tracking application that helps you manage your income, spending, and savings with intelligent insights and recommendations.
 
 ## Features
 
-- **Expense Tracking**: Track daily, monthly, and yearly income and expenses
-- **AI-Powered Analysis**: Get insights about spending patterns and suggestions for better financial management
-- **Stock Market Integration**: Real-time stock market data and AI-powered investment suggestions
-- **Micro-Investment**: Automated micro-investments ranging from ₹5 to ₹50
-- **Smart Notifications**: Get alerts for spending patterns, investment opportunities, and stock market movements
-- **Bank Integration**: Link bank accounts for automated transaction tracking and micro-investments
+- **Income & Spending Tracking**
+  - Add and categorize income and spending transactions
+  - Track multiple income sources and spending categories
+  - Detailed transaction history with descriptions
 
-## Getting Started
+- **AI-Powered Analysis**
+  - Smart spending pattern analysis
+  - Category-wise insights and recommendations
+  - Monthly reduction targets
+  - Long-term savings planning
 
-### Prerequisites
+- **Savings Management**
+  - Monthly savings tracking
+  - Yearly savings progress monitoring
+  - Customizable savings goals
 
-- Flutter SDK (latest version)
-- OpenRouter API Key (for AI analysis)
-- Alpha Vantage API Key (for stock market data)
+- **Financial Overview**
+  - Real-time income and spending summaries
+  - Category-wise breakdowns
+  - Net income calculations
+  - Spending vs. Income ratios
 
-### Installation
+## Tech Stack
+
+- **Frontend**
+  - Next.js 13+ with App Router
+  - React
+  - Tailwind CSS
+  - Heroicons
+  - React Hot Toast
+
+- **Backend**
+  - Next.js API Routes
+  - MongoDB
+  - Mongoose ODM
+
+## Prerequisites
+
+- Node.js 16.x or later
+- MongoDB
+- OpenRouter API key (for AI analysis)
+
+## Installation
 
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/paisapath.git
-```
+   ```bash
+   git clone https://github.com/yourusername/paisa-next.git
+   cd paisa-next
+   ```
 
 2. Install dependencies:
-```bash
-flutter pub get
-```
+   ```bash
+   npm install
+   ```
 
-3. Configure API keys:
-   - Create a `.env` file in the root directory
-   - Add your API keys:
-     ```
-     OPENROUTER_API_KEY=your_openrouter_api_key
-     ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key
-     ```
+3. Create a `.env.local` file in the root directory with the following variables:
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   OPENROUTER_API_KEY=your_openrouter_api_key
+   ```
 
-4. Run the app:
-```bash
-flutter run
-```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
 ```
-lib/
-├── main.dart              # App entry point
-├── providers/            # State management
-│   └── finance_provider.dart
-├── screens/             # App screens
-│   └── home_screen.dart
-├── widgets/             # Reusable widgets
-│   ├── transaction_list.dart
-│   └── stock_watchlist.dart
-└── services/           # API and service integrations
-    ├── ai_service.dart
-    ├── stock_service.dart
-    └── notification_service.dart
+paisa-next/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── analyze/
+│   │   │   ├── income/
+│   │   │   ├── spending/
+│   │   │   └── savings/
+│   │   ├── page.js
+│   │   └── layout.js
+│   ├── components/
+│   ├── lib/
+│   └── models/
+├── public/
+└── package.json
 ```
 
-## Dependencies
+## API Endpoints
 
-- `provider`: State management
-- `http`: API calls
-- `flutter_local_notifications`: Local notifications
-- `intl`: Date formatting
+- `POST /api/income` - Add new income
+- `GET /api/income` - Get all income records
+- `POST /api/spending` - Add new spending
+- `GET /api/spending` - Get all spending records
+- `POST /api/analyze` - Get AI-powered financial analysis
+- `POST /api/savings` - Update monthly savings
+- `GET /api/savings` - Get savings data
+
+## Features in Detail
+
+### Income & Spending Tracking
+- Add transactions with title, amount, category, and description
+- Predefined categories for both income and spending
+- Real-time updates and validation
+
+### AI Analysis
+- Spending pattern recognition
+- Category-wise recommendations
+- Monthly reduction targets
+- Long-term financial planning
+- Savings optimization suggestions
+
+### Savings Management
+- Monthly savings tracking
+- Yearly progress monitoring
+- Customizable savings goals
+- Visual progress indicators
+
+### Financial Overview
+- Comprehensive dashboard
+- Category-wise breakdowns
+- Spending vs. Income analysis
+- Net income calculations
 
 ## Contributing
 
@@ -79,10 +138,11 @@ lib/
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-- OpenRouter API for AI analysis
-- Alpha Vantage for stock market data
-- Flutter team for the amazing framework
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [OpenRouter](https://openrouter.ai/)
